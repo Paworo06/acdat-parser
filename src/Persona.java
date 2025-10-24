@@ -5,7 +5,9 @@ public class Persona {
     private String email;
     private String telefono;
 
-    public Persona() {}
+    public Persona() {
+
+    }
 
     public Persona(String nombre, String apellido, int edad, String email, String telefono) {
         this.nombre = nombre;
@@ -15,17 +17,35 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    /*
+    /**
      * TODO: Crea el constructor de la clase Persona que reciba como parámetro una cadena
      * de caracteres con los valores separados por comas (,)
      * Ejemplo de cadena: "Ana,Perez,25,ana.perez@example.com,+34911111111"
-     *
+     * <p>
      * El constructor debe:
      * 1. Separar los valores usando split(",").
      * 2. Asignar los valores a los atributos correspondientes.
      * 3. Convertir el tercer valor (edad) a entero.
      * 4. No lanzar excepciones. Si algo falla, asigna valores por defecto.
      */
+    public Persona(String cadena) {
+        try {
+            String[] datos = cadena.split(",");
+            this.nombre = datos[0].trim();
+            this.apellido = datos[1].trim();
+            this.edad = Integer.parseInt(datos[2].trim());
+            this.email = datos[3].trim();
+            this.telefono = datos[4].trim();
+
+        } catch(Exception e) {
+            this.nombre = "Desconocido";
+            this.apellido = "Desconocido";
+            this.edad = 0;
+            this.email = "Desconocido";
+            this.telefono = "Desconocido";
+
+        }
+    }
 
     public String getNombre() {
         return nombre;
