@@ -89,11 +89,12 @@ public class Persona {
 
     @Override
     public String toString() {
-        return String.format("Persona:{nombre='%s', apellido='%s', edad='%s', email='%s', telefono='%s'}"
+        // toString mejorado 🥵🔥
+        return String.format("Persona:{nombre='%s', apellido='%s', edad='%d', email='%s', telefono='%s'}"
         , this.nombre, this.apellido, this.edad, this.email, this.telefono);
     }
 
-    /*
+    /* Metodo OG 🤓👆
     return "Persona{" +
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
